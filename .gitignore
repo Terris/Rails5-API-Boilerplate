@@ -15,3 +15,4 @@ git config --global core.excludesfile '~/.gitignore_global'
 !/tmp/.keep
 
 .byebug_history
+.env

@@ -9,7 +9,7 @@ module Api::V1
     end
 
     def show
-      @user = User.find(params[:id])
+      @user = current_user
       json_response(@user)
     end
 
@@ -25,7 +25,7 @@ module Api::V1
     private
 
     def user_params
-      params.permit(
+      params.require(:user).permit(
         :email,
         :password,
         :password_confirmation
